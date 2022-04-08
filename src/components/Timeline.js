@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import Post from './Post';
+import CreatePostModal from './CreatePostModal'
 
 const Timeline = () => {
     const [posts, setPosts] = useState([])
+    const [newPostModalVisible, setNewPostModalVisible] = useState(false)
 
     useEffect(() => {
         // IIFE: immediately invoked function expression
@@ -16,6 +18,8 @@ const Timeline = () => {
     return(
         <div>
             <h2>Timeline</h2>
+            <button onClick={() => {setNewPostModalVisible(!newPostModalVisible)}}>+ New Post</button>
+            <CreatePostModal newPostModalVisible={newPostModalVisible}  />
             {
                 posts.map((post) => {
                     return(

@@ -1,0 +1,8 @@
+.create-post-modal {
+  border: 1px #333;
+}
+
+.create-post-modal-hidden {
+  border: 1px #333;
+  display: none;
+}
